@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(cors());
 
-const YOUR_DOMAIN = 'http://localhost:5173';
+const YOUR_DOMAIN = process.env.REDIRECT_URL;
 
 //Connect to database
 connectToDb();
