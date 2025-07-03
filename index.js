@@ -8,8 +8,12 @@ require('dotenv').config();
 const stripe = require("stripe")(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-app.use(cors());
+const PORT = process.env.PORT || 4000;
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true // optional: if you're using cookies/session
+}));
+
 
 const YOUR_DOMAIN = process.env.REDIRECT_URL;
 
